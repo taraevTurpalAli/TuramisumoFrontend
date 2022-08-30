@@ -3,18 +3,6 @@ import Header from "../../Components/Header/Header";
 import styles from "../../scss/pages/Restoran.module.scss";
 
 const Restoran = () => {
-  const [table, setTable] = useState(false)
-  const [room, setRoom] = useState(false)
-
-  const handleTable = () => {
-    setTable(true)
-    setRoom(false)
-  }
-
-  const handleRoom = () => {
-    setRoom(true)
-    setTable(false)
-  }
   return (
     <div className={styles.main_res}>
       <Header />
@@ -34,7 +22,7 @@ const Restoran = () => {
             alt=""
             className={styles.image}
           />
-          <button  onClick={handleTable} className={styles.button}>Забронировать столик</button>
+          <button className={styles.button}>Забронировать столик</button>
         </div>
         <div className={styles.choose_room}>
           <img
@@ -42,11 +30,9 @@ const Restoran = () => {
             alt=""
             className={styles.image}
           />
-          <button onClick={handleRoom} className={styles.button}>Заказать в номер</button>
+          <button className={styles.button}>Заказать в номер</button>
         </div>
       </div>
-      {table ? <div>lol</div> : null}
-      {room ? <div>kek</div> : null}
     </div>
   );
 };
